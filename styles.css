@@ -620,8 +620,8 @@ nav {
 /* ══════════════════════════════════════════
    HAIFA GALLERY PAGE
 ══════════════════════════════════════════ */
-.haifa-title-row { display: inline-flex; align-items: center; gap: 1.2rem; }
-.haifa-logo { width: 80px; height: auto; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
+.haifa-hero-content { display: flex; align-items: flex-end; justify-content: space-between; }
+.haifa-logo { width: 140px; height: auto; mix-blend-mode: multiply; display: block; flex-shrink: 0; }
 .haifa-about { padding: 6rem 4rem; max-width: 1400px; margin: 0 auto; }
 .haifa-about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 .haifa-about-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--cream); line-height: 1.2; margin: 1.5rem 0 1.5rem; }
@@ -643,7 +643,26 @@ nav {
 .haifa-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
 .haifa-photo:hover img { transform: scale(1.04); }
 
-.haifa-exhibitions { padding: 4rem 4rem 8rem; border-top: 1px solid rgba(58,94,36,0.2); max-width: 1400px; margin: 0 auto; }
+.haifa-exhibitions { padding: 4rem 4rem 6rem; border-top: 1px solid rgba(58,94,36,0.2); max-width: 1400px; margin: 0 auto; }
+.haifa-map { padding: 4rem 4rem 8rem; border-top: 1px solid rgba(58,94,36,0.2); max-width: 1400px; margin: 0 auto; }
+.haifa-map-frame { width: 100%; height: 400px; border-radius: 4px; overflow: hidden; margin-top: 2rem; box-shadow: 0 4px 24px rgba(14,28,8,0.08); }
+.haifa-map-btns { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; align-items: flex-start; }
+.share-wrap { position: relative; }
+.share-menu {
+  display: none; position: absolute; top: calc(100% + 0.5rem); left: 0;
+  background: var(--charcoal); border: 1px solid rgba(58,94,36,0.3);
+  min-width: 170px; z-index: 100; box-shadow: 0 8px 24px rgba(14,28,8,0.15);
+}
+.share-menu.open { display: block; }
+.share-option {
+  display: flex; align-items: center; gap: 0.75rem;
+  width: 100%; padding: 0.85rem 1.2rem;
+  font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--cream); text-decoration: none;
+  background: none; border: none; cursor: pointer; text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+.share-option:hover { background: rgba(58,94,36,0.18); color: var(--gold); }
 
 /* ══════════════════════════════════════════
    SHOP PAGE

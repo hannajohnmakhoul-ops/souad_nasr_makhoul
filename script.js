@@ -2,6 +2,25 @@
 var lbItems = [];
 var lbIndex = 0;
 
+/* ── Map Actions ── */
+function toggleShareMenu(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('share-menu');
+  menu.classList.toggle('open');
+}
+function copyMapLink() {
+  var url = 'https://maps.google.com/maps?q=32.8153709,34.9941001';
+  var label = document.getElementById('copy-label');
+  navigator.clipboard.writeText(url).then(function() {
+    label.textContent = 'Copied!';
+    setTimeout(function() { label.textContent = 'Copy Link'; }, 2000);
+  });
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('share-menu');
+  if (menu && !menu.parentElement.contains(e.target)) menu.classList.remove('open');
+});
+
 /* ── Mobile Menu Toggle ── */
 function toggleMobileMenu() {
   var btn = document.querySelector('.hamburger-btn');
