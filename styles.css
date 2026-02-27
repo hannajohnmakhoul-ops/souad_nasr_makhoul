@@ -544,6 +544,7 @@ nav {
   align-items: center; justify-content: center;
   animation: lbFadeIn 0.3s ease;
   padding: 2rem;
+  overflow: hidden;
 }
 .lightbox.open { display: flex; }
 @keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -593,6 +594,7 @@ nav {
   transition: all 0.25s; font-family: 'Jost', sans-serif;
   border-radius: 2px;
   -webkit-tap-highlight-color: transparent;
+  z-index: 9010;
 }
 .lightbox-prev { left: 1rem; }
 .lightbox-next { right: 1rem; }
