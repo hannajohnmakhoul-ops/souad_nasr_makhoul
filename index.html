@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Souad Nasr Makhoul — Artist</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')" style="cursor:pointer;">Souad Nasr Makhoul</div>
+  <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links-menu">
+    <li><a href="javascript:void(0)" class="active" id="nav-home"  onclick="showPage('home'); closeMobileMenu()" data-en="Home" data-ar="الرئيسية">Home</a></li>
+    <li><a href="javascript:void(0)" id="nav-about"   onclick="showPage('about');event.preventDefault(); closeMobileMenu()" data-en="About" data-ar="عن الفنانة">About</a></li>
+    <li><a href="javascript:void(0)" id="nav-gallery" onclick="showPage('gallery');event.preventDefault(); closeMobileMenu()" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
+    <li><a href="javascript:void(0)" id="nav-haifa"   onclick="showPage('haifa');event.preventDefault(); closeMobileMenu()" data-en="Haifa Gallery" data-ar="غاليري حيفا">Haifa Gallery</a></li>
+    <li><a href="javascript:void(0)" id="nav-shop"    onclick="showPage('shop');event.preventDefault(); closeMobileMenu()" data-en="Shop" data-ar="المتجر">Shop</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">ع</button>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" style="background-image: url('assets/images/The planting woman.jpg');"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-ornament"></div>
+    <div class="hero-content">
+  
+      <h1 class="hero-name" data-en="Souad<br><em>Nasr</em><br>Makhoul" data-ar="سعاد <em>نصر</em> مخول">Souad<br><em>Nasr</em><br>Makhoul</h1>
+      <p class="hero-tagline" data-en="Palestinian Artist" data-ar="فنانة فلسطينية">Palestinian Artist</p>
+      <div class="hero-ctas">
+        <button class="hero-btn hero-btn-primary" onclick="showPage('gallery');event.preventDefault()" data-en="View Works" data-ar="عرض الأعمال">View Works</button>
+        <button class="hero-btn hero-btn-secondary" onclick="showPage('about');event.preventDefault()" data-en="About the Artist" data-ar="عن الفنانة">About the Artist</button>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="home-themes">
+    <p class="section-label reveal" data-en="Practice &amp; Themes" data-ar="الأسلوب والمواضيع">Practice &amp; Themes</p>
+    <div class="themes-grid">
+      <div class="theme-card reveal">
+        <div class="theme-num">01</div>
+        <div class="theme-title" data-en="Memory &amp; Place" data-ar="الذاكرة والمكان">Memory &amp; Place</div>
+        <p class="theme-text" data-en="My early works documented the emotional landscape of displacement — ruined homes, absent communities, the silent tension between past and present. Haifa is not just a setting; it is the language itself." data-ar="وثّقت أعمالي الأولى المشهد العاطفي للتهجير — البيوت المدمّرة، والمجتمعات المُغيَّبة، والتوتر الصامت بين الماضي والحاضر. حيفا ليست مجرد خلفية؛ بل هي اللغة ذاتها.">My early works documented the emotional landscape of displacement &mdash; ruined homes, absent communities, the silent tension between past and present. Haifa is not just a setting; it is the language itself.</p>
+      </div>
+      <div class="theme-card reveal reveal-d1">
+        <div class="theme-num">02</div>
+        <div class="theme-title" data-en="The Female Figure" data-ar="الشخصية الأنثوية">The Female Figure</div>
+        <p class="theme-text" data-en="Over time, women emerged as the central motif — embodying strength, endurance, and continuity. In abstract figurative paintings I explore the bond between women and nature through movement and body language." data-ar="برزت المرأة مع الوقت لتكون الموضوع المحوري — تجسيدًا للقوة والصمود والاستمرارية. في لوحاتي التجريدية التشخيصية، أستكشف الرابط بين المرأة والطبيعة من خلال الحركة ولغة الجسد.">Over time, women emerged as the central motif &mdash; embodying strength, endurance, and continuity. In abstract figurative paintings I explore the bond between women and nature through movement and body language.</p>
+      </div>
+      <div class="theme-card reveal reveal-d2">
+        <div class="theme-num">03</div>
+        <div class="theme-title" data-en="Into Public Space" data-ar="نحو الفضاء العام">Into Public Space</div>
+        <p class="theme-text" data-en="Beyond the canvas: sculptures for public spaces, including one of the first monuments in Arab towns celebrating women's empowerment. Art that steps outside the frame into the life of the community." data-ar="ما وراء اللوحة: منحوتات للفضاءات العامة، من بينها أحد أوائل النصب التذكارية في البلدات العربية احتفاءً بتمكين المرأة. فنٌّ يتخطّى الإطار ليعيش في حياة المجتمع.">Beyond the canvas: sculptures for public spaces, including one of the first monuments in Arab towns celebrating women&rsquo;s empowerment. Art that steps outside the frame into the life of the community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="home-preview">
+    <p class="section-label reveal" data-en="Selected Works" data-ar="أعمال مختارة">Selected Works</p>
+    <h2 class="preview-title reveal reveal-d1" data-en="Haifa Gallery" data-ar="غاليري حيفا">Haifa Gallery</h2>
+    <p class="preview-desc reveal reveal-d1" data-en="Established in December 2020 by Souad Nasr Makhoul, Haifa Gallery is the first Palestinian Arab gallery in Haifa since 1948. Located in a 150-year-old building in the historic Wadi Al-Nisnas neighbourhood, the gallery promotes Palestinian and Arab cultural identity through art and heritage exhibitions, multicultural exchanges, and educational programmes — hosting school visits, tourist groups, and community clubs. Among its curated exhibitions: <em>The Old City of Haifa</em>, <em>The Expelled Arts: Artists of Haifa Pre-1948</em>, and the annual Palestinian Embroidery Bazaar." data-ar="أسّست سعاد نصر مخول غاليري حيفا في ديسمبر 2020، ليكون أول غاليري فلسطيني عربي في حيفا منذ عام 1948. يقع في مبنى تاريخي عمره 150 عامًا في حي وادي النسناس العريق، ويسعى إلى تعزيز الهوية الثقافية الفلسطينية والعربية من خلال معارض الفن والتراث، وتبادل الثقافات، والبرامج التعليمية — مستضيفًا زيارات مدارس، ومجموعات سياحية، وأندية مجتمعية. ومن أبرز معارضه: <em>مدينة حيفا القديمة</em>، و<em>الفن المُهجَّر: فنانو حيفا قبل 1948</em>، وبازار التطريز الفلسطيني السنوي.">Established in December 2020 by Souad Nasr Makhoul, Haifa Gallery is the first Palestinian Arab gallery in Haifa since 1948. Located in a 150-year-old building in the historic Wadi Al-Nisnas neighbourhood, the gallery promotes Palestinian and Arab cultural identity through art and heritage exhibitions, multicultural exchanges, and educational programmes — hosting school visits, tourist groups, and community clubs. Among its curated exhibitions: <em>The Old City of Haifa</em>, <em>The Expelled Arts: Artists of Haifa Pre-1948</em>, and the annual Palestinian Embroidery Bazaar.</p>
+    <div class="preview-strip reveal reveal-d2">
+      <div class="preview-thumb"><img src="assets/images/Haifa gallery/488603072_2926413837521579_2027608596203338933_n.jpg" alt="Artwork 1"></div>
+      <div class="preview-thumb"><img src="assets/images/Haifa gallery/506607568_3003514439811518_5198768384341237018_n.jpg" alt="Artwork 2"></div>
+      <div class="preview-thumb"><img src="assets/images/Haifa gallery/532928262_3068461516650143_5154693822092393911_n.jpg" alt="Artwork 3"></div>
+      <div class="preview-thumb"><img src="assets/images/Haifa gallery/582420494_3165264366969857_2880520654881773137_n.jpg" alt="Artwork 4"></div>
+    </div>
+    <div class="preview-cta reveal reveal-d3">
+      <button class="btn-gold" onclick="showPage('gallery');event.preventDefault()" data-en="View Full Gallery" data-ar="عرض المعرض كاملاً">View Full Gallery</button>
+    </div>
+  </section>
+
+
+</div><!-- /home -->
+
+
+<!-- ════════════════════════════════════════
+     ABOUT PAGE
+════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <!-- About Hero -->
+  <div class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-line"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-label" data-en="Palestinian Artist" data-ar="فنانة فلسطينية">Palestinian Artist</div>
+      <h1 class="about-hero-title">Souad Nasr<br><em>Makhoul</em></h1>
+    </div>
+  </div>
+
+  <!-- About Body -->
+  <div class="about-body">
+    <div class="about-body-grid">
+
+      <!-- LEFT: portrait + stats -->
+      <div class="about-left">
+        <div class="about-portrait">
+          <img src="assets/images/extracted_02.jpg" alt="Souad Nasr Makhoul" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          <div class="portrait-corner-tr"></div>
+          <div class="portrait-corner-bl"></div>
+        </div>
+        <div class="about-stats-col">
+          <div class="stat-box"><div class="sn">1989</div><div class="sl" data-en="Practice" data-ar="الممارسة">Practice</div></div>
+          <div class="stat-box"><div class="sn">2008</div><div class="sl" data-en="Cities Gallery" data-ar="غاليري المدن">Cities Gallery</div></div>
+          <div class="stat-box"><div class="sn">2019</div><div class="sl" data-en="Haifa Gallery" data-ar="غاليري حيفا">Haifa Gallery</div></div>
+        </div>
+        <div class="disciplines" style="margin-top:2rem;">
+          <span class="disc-tag" data-en="Painting" data-ar="لوحة">Painting</span>
+          <span class="disc-tag" data-en="Drawing" data-ar="رسم">Drawing</span>
+          <span class="disc-tag" data-en="Sculpture" data-ar="نحت">Sculpture</span>
+          <span class="disc-tag" data-en="Public Art" data-ar="فن عام">Public Art</span>
+          <span class="disc-tag" data-en="Illustration" data-ar="رسوم توضيحية">Illustration</span>
+          <span class="disc-tag" data-en="Mixed Media" data-ar="وسائط متعددة">Mixed Media</span>
+          <span class="disc-tag" data-en="Urban Planning" data-ar="تخطيط عمراني">Urban Planning</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: text -->
+      <div class="about-right">
+
+        <div class="about-section reveal">
+          <h2 class="about-section-title" data-en="Born in Haifa" data-ar="وُلدت في حيفا">Born in Haifa</h2>
+          <p class="about-p" data-en="Born and raised in Haifa, my life and artistic practice are deeply shaped by the layered history, memory, and resilience of the city. Working across painting, drawing, sculpture, and public art, I explore themes of womanhood, identity, displacement, and the relationship between humans and nature." data-ar="وُلدت ونشأت في حيفا، وقد شكّلت تاريخ المدينة المتراكم وذاكرتها وصمودها حياتي وممارستي الفنية في أعماقهما. أعمل في اللوحة والرسم والنحت والفن العام، مستكشفةً موضوعات الأنوثة والهوية والتهجير والعلاقة بين الإنسان والطبيعة.">
+            Born and raised in Haifa, my life and artistic practice are deeply shaped by the layered history,
+            memory, and resilience of the city. Working across painting, drawing, sculpture, and public art,
+            I explore themes of womanhood, identity, displacement, and the relationship between humans and nature.
+          </p>
+          <p class="about-p" data-en="Alongside my professional career in urban planning, civil engineering, and project management — through which I have led planning and development projects since 1989 — art has remained a central and continuous force in my life." data-ar="إلى جانب مسيرتي المهنية في التخطيط العمراني والهندسة المدنية وإدارة المشاريع — التي أقود من خلالها مشاريع التخطيط والتطوير منذ عام 1989 — ظلّ الفن قوةً محوريةً ومستمرةً في حياتي.">
+            Alongside my professional career in urban planning, civil engineering, and project management &mdash;
+            through which I have led planning and development projects since 1989 &mdash; art has remained a
+            central and continuous force in my life.
+          </p>
+        </div>
+
+        <div class="about-section reveal">
+          <h2 class="about-section-title" data-en="First Generation" data-ar="الجيل الأول">First Generation</h2>
+          <p class="about-p" data-en="Together with my twin sister, I belong to the <span class=&quot;about-highlight&quot;>first generation of Palestinian artists born and raised in Haifa after the Nakba</span> — a reality that profoundly influenced my artistic perspective from an early age." data-ar="أنا وتوأمي، ننتمي إلى <span class=&quot;about-highlight&quot;>الجيل الأول من الفنانين الفلسطينيين الذين وُلدوا ونشأوا في حيفا بعد النكبة</span> — وهو واقع أثّر تأثيرًا عميقًا في رؤيتي الفنية منذ سنّ مبكرة.">
+            Together with my twin sister, I belong to the <span class="about-highlight">first generation of Palestinian
+            artists born and raised in Haifa after the Nakba</span> &mdash; a reality that profoundly influenced my
+            artistic perspective from an early age.
+          </p>
+          <p class="about-p" data-en="I grew up in a historic building once inhabited by Ibrahim Pasha Al-Khalili, former mayor of Haifa during the Ottoman period. Raised by my mother with my four sisters, our family maintained a presence in an area marked by demolition, abandonment, and urban transformation — becoming the only remaining Arab family in the immediate surroundings. These early experiences shaped my visual language, which often reflects themes of loss, memory, and survival." data-ar="ترعرعت في مبنى تاريخي كان يقطنه إبراهيم باشا الخليلي، عمدة حيفا إبّان الحقبة العثمانية. ربّتنا أمي بمفردها أنا وأخواتي الأربع، وحافظت عائلتنا على حضورها في منطقة طالها الهدم والإهمال والتحوّل العمراني — لنصبح العائلة العربية الوحيدة المتبقية في المحيط المباشر. شكّلت هذه التجارب المبكرة لغتي البصرية التي كثيرًا ما تعكس موضوعات الفقد والذاكرة والبقاء.">
+            I grew up in a historic building once inhabited by Ibrahim Pasha Al-Khalili, former mayor of Haifa during
+            the Ottoman period. Raised by my mother with my four sisters, our family maintained a presence in an area
+            marked by demolition, abandonment, and urban transformation &mdash; becoming the only remaining Arab family
+            in the immediate surroundings. These early experiences shaped my visual language, which often reflects
+            themes of loss, memory, and survival.
+          </p>
+        </div>
+
+        <div class="about-section reveal">
+          <h2 class="about-section-title" data-en="The Work" data-ar="العمل">The Work</h2>
+          <p class="about-p" data-en="My early works documented the emotional landscape of displacement: ruined homes, absent communities, and the silent tension between past and present. Over time, the female figure emerged as a central motif in my work, representing strength, endurance, and continuity." data-ar="وثّقت أعمالي الأولى المشهد العاطفي للتهجير: البيوت المدمّرة، والمجتمعات المُغيَّبة، والتوتر الصامت بين الماضي والحاضر. ومع الوقت، برزت الشخصية الأنثوية موضوعًا محوريًا في أعمالي، تجسيدًا للقوة والصمود والاستمرارية.">
+            My early works documented the emotional landscape of displacement: ruined homes, absent communities,
+            and the silent tension between past and present. Over time, the female figure emerged as a central
+            motif in my work, representing strength, endurance, and continuity.
+          </p>
+          <p class="about-p" data-en="In my more recent abstract figurative paintings, I explore the connection between women and nature, expressing universal human emotions through movement, body language, and environmental interaction. I also incorporate <span class=&quot;about-highlight&quot;>recycled materials</span>, reflecting my commitment to environmental awareness." data-ar="في لوحاتي التجريدية التشخيصية الأحدث، أستكشف العلاقة بين المرأة والطبيعة، معبِّرةً عن مشاعر إنسانية كونية من خلال الحركة ولغة الجسد والتفاعل مع البيئة. كما أدمج <span class=&quot;about-highlight&quot;>مواد معادة التدوير</span>، تعبيرًا عن التزامي بالوعي البيئي.">
+            In my more recent abstract figurative paintings, I explore the connection between women and nature,
+            expressing universal human emotions through movement, body language, and environmental interaction.
+            I also incorporate <span class="about-highlight">recycled materials</span>, reflecting my commitment
+            to environmental awareness.
+          </p>
+          <p class="about-p" data-en="Beyond canvas, I have created sculptures for public spaces, including a statue of a woman playing the guitar in Kafr Yassif — among the first public monuments in Arab towns dedicated to celebrating women's empowerment. My practice also includes illustration and design collaborations with Palestinian writers and cultural organizations." data-ar="وراء اللوحة، أنجزت منحوتات للفضاءات العامة، من بينها تمثال امرأة تعزف الغيتار في كفر ياسيف — من بين أوائل النصب العامة في البلدات العربية المكرَّسة للاحتفاء بتمكين المرأة. تشمل ممارستي أيضًا الرسوم التوضيحية والتعاون في التصميم مع كتّاب فلسطينيين ومنظمات ثقافية.">
+            Beyond canvas, I have created sculptures for public spaces, including a statue of a woman playing
+            the guitar in Kafr Yassif &mdash; among the first public monuments in Arab towns dedicated to
+            celebrating women&rsquo;s empowerment. My practice also includes illustration and design
+            collaborations with Palestinian writers and cultural organizations.
+          </p>
+        </div>
+
+        <div class="about-section reveal">
+          <h2 class="about-section-title" data-en="Preserving Heritage" data-ar="صون التراث">Preserving Heritage</h2>
+          <p class="about-p" data-en="In <span class=&quot;about-highlight&quot;>2008</span>, I founded the <em>Cities Gallery</em> project, presenting exhibitions focused on Palestinian historical cities. This initiative later led to the establishment of <span class=&quot;about-highlight&quot;>Haifa Gallery in 2019</span> in Wadi Al Nisnas — the first Palestinian Arab gallery in Haifa since 1948." data-ar="في عام <span class=&quot;about-highlight&quot;>2008</span>، أسّست مشروع <em>غاليري المدن</em>، مقدِّمةً معارض تتمحور حول المدن التاريخية الفلسطينية. أفضت هذه المبادرة لاحقًا إلى تأسيس <span class=&quot;about-highlight&quot;>غاليري حيفا عام 2019</span> في وادي النسناس — أول غاليري فلسطيني عربي في حيفا منذ عام 1948.">
+            In <span class="about-highlight">2008</span>, I founded the <em>Cities Gallery</em> project, presenting
+            exhibitions focused on Palestinian historical cities. This initiative later led to the establishment of
+            <span class="about-highlight">Haifa Gallery in 2019</span> in Wadi Al Nisnas &mdash; the first Palestinian
+            Arab gallery in Haifa since 1948.
+          </p>
+          <p class="about-p" data-en="Haifa Gallery is dedicated to preserving and revitalizing Palestinian art, culture, and heritage through exhibitions and a museum documenting the city's history. Through my work, I seek to create spaces where memory, identity, and imagination meet — connecting personal stories with collective narratives." data-ar="يُكرِّس غاليري حيفا نفسه لصون الفن والثقافة والتراث الفلسطيني وإحيائه من خلال المعارض ومتحف يوثّق تاريخ المدينة. من خلال أعمالي، أسعى إلى إيجاد فضاءات تلتقي فيها الذاكرة والهوية والخيال — تربط القصص الشخصية بالروايات الجماعية.">
+            Haifa Gallery is dedicated to preserving and revitalizing Palestinian art, culture, and heritage through
+            exhibitions and a museum documenting the city&rsquo;s history. Through my work, I seek to create spaces
+            where memory, identity, and imagination meet &mdash; connecting personal stories with collective narratives.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="about-section reveal">
+          <h2 class="about-section-title" data-en="Timeline" data-ar="الجدول الزمني">Timeline</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">1989</div>
+              <div class="tl-text" data-en="<strong>Professional practice begins</strong> — Parallel careers in urban planning/civil engineering and fine art commence." data-ar="<strong>بدء الممارسة المهنية</strong> — انطلاق مسيرتين متوازيتين في التخطيط العمراني/الهندسة المدنية والفنون الجميلة."><strong>Professional practice begins</strong> &mdash; Parallel careers in urban planning/civil engineering and fine art commence.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2008</div>
+              <div class="tl-text" data-en="<strong>Cities Gallery founded</strong> — Exhibition project presenting Palestinian historical cities; inaugural show <em>Memory of the City</em>." data-ar="<strong>تأسيس غاليري المدن</strong> — مشروع معارض يستعرض المدن التاريخية الفلسطينية؛ المعرض الافتتاحي: <em>ذاكرة المدينة</em>."><strong>Cities Gallery founded</strong> &mdash; Exhibition project presenting Palestinian historical cities; inaugural show <em>Memory of the City</em>.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">c. 2015</div>
+              <div class="tl-text" data-en="<strong>Guitar Player unveiled</strong> — Public sculpture installed in Kafr Yassif, among the first monuments in Arab towns celebrating women's empowerment." data-ar="<strong>الكشف عن &quot;عازفة الغيتار&quot;</strong> — منحوتة عامة نُصبت في كفر ياسيف، من بين أوائل النصب في البلدات العربية احتفاءً بتمكين المرأة."><strong>Guitar Player unveiled</strong> &mdash; Public sculpture installed in Kafr Yassif, among the first monuments in Arab towns celebrating women&rsquo;s empowerment.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2019</div>
+              <div class="tl-text" data-en="<strong>Haifa Gallery established</strong> — Wadi Al Nisnas. The first Palestinian Arab gallery in Haifa since 1948, preserving art, culture, and the city's heritage." data-ar="<strong>تأسيس غاليري حيفا</strong> — وادي النسناس. أول غاليري فلسطيني عربي في حيفا منذ 1948، يحفظ الفن والثقافة وتراث المدينة."><strong>Haifa Gallery established</strong> &mdash; Wadi Al Nisnas. The first Palestinian Arab gallery in Haifa since 1948, preserving art, culture, and the city&rsquo;s heritage.</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /about-right -->
+    </div><!-- /grid -->
+  </div><!-- /about-body -->
+
+</div><!-- /about -->
+
+
+<!-- ════════════════════════════════════════
+     GALLERY PAGE
+════════════════════════════════════════ -->
+<div id="page-gallery" class="page">
+
+  <!-- Gallery Hero -->
+  <div class="gallery-hero">
+    <div class="gallery-hero-line"></div>
+    <div class="gallery-hero-content">
+      <div class="gallery-hero-label" data-en="Works" data-ar="أعمال">Works</div>
+      <h1 class="gallery-hero-title"><span data-en="Selected" data-ar="مختارة">Selected</span><br><em data-en="Paintings &amp; Sculptures" data-ar="لوحات ومنحوتات">Paintings &amp; Sculptures</em></h1>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="gallery-filters">
+    <span class="filter-label" data-en="Filter" data-ar="تصفية">Filter</span>
+    <button class="filter-btn active" onclick="filterGallery('all',this)" data-en="All" data-ar="الكل">All</button>
+    <button class="filter-btn" onclick="filterGallery('painting',this)" data-en="Painting" data-ar="لوحات">Painting</button>
+    <button class="filter-btn" onclick="filterGallery('sculpture',this)" data-en="Sculpture" data-ar="منحوتات">Sculpture</button>
+  </div>
+
+  <!-- Masonry -->
+  <div class="gallery-body">
+    <div class="gallery-masonry" id="galleryGrid">
+
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/2011_51132_100664.jpg" alt="Untitled I" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Untitled — I" data-ar="بلا عنوان — I">Untitled — I</div>
+              <div class="gi-meta"></div>
+              <div class="gi-medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Woman with Bird -->
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/extracted_04.jpg" alt="Woman with Bird" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Woman with Bird" data-ar="امرأة مع طائر">Woman with Bird</div>
+              <div class="gi-meta">2019</div>
+              <div class="gi-medium" data-en="Oil on canvas · 60 × 80 cm" data-ar="زيت على قماش · 60 × 80 سم">Oil on canvas &middot; 60 &times; 80 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Woman with Bouquet -->
+      <div class="gitem reveal reveal-d2" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/امراءة وباقة ورد.jpg" alt="Woman with Bouquet" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Woman with Bouquet" data-ar="امرأة وباقة ورد">Woman with Bouquet</div>
+              <div class="gi-meta">2021</div>
+              <div class="gi-medium" data-en="Oil on canvas" data-ar="زيت على قماش">Oil on canvas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Birth -->
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/the birth, oil on canvas, 100X120cm, 2020.jpg" alt="The Birth" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="The Birth" data-ar="الولادة">The Birth</div>
+              <div class="gi-meta">2020</div>
+              <div class="gi-medium" data-en="Oil on canvas · 100 × 120 cm" data-ar="زيت على قماش · 100 × 120 سم">Oil on canvas &middot; 100 &times; 120 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Women Toward the Light (2nd version) -->
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/women toward the light, oil on canvas, 100X120cm, 2020 (1).jpg" alt="Women Toward the Light" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Women Toward the Light" data-ar="نساء نحو الضوء">Women Toward the Light</div>
+              <div class="gi-meta">2020</div>
+              <div class="gi-medium" data-en="Oil on canvas · 100 × 120 cm" data-ar="زيت على قماش · 100 × 120 سم">Oil on canvas &middot; 100 &times; 120 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Storm painting -->
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/extracted_08.jpg" alt="The Storm" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="The Storm" data-ar="العاصفة">The Storm</div>
+              <div class="gi-meta">2011</div>
+              <div class="gi-medium" data-en="Oil on canvas" data-ar="زيت على قماش">Oil on canvas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guitar Player sculpture photo 2 -->
+      <div class="gitem reveal reveal-d2" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/2011_51132_100666.jpg" alt="Untitled II" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Untitled — II" data-ar="بلا عنوان — II">Untitled — II</div>
+              <div class="gi-meta"></div>
+              <div class="gi-medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guitar Player sculpture photo 3 — artist with sculpture -->
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/2011_51132_100671.jpg" alt="Untitled III" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Untitled — III" data-ar="بلا عنوان — III">Untitled — III</div>
+              <div class="gi-meta"></div>
+              <div class="gi-medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guitar Player sculpture photo 4 — against sky -->
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Longing, acrylic on paper, 55x77cm,2006 (1).jpg" alt="Longing" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Longing" data-ar="الشوق">Longing</div>
+              <div class="gi-meta">2006</div>
+              <div class="gi-medium" data-en="Acrylic on paper · 55 × 77 cm" data-ar="أكريليك على ورق · 55 × 77 سم">Acrylic on paper &middot; 55 &times; 77 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- additional sculptures imported from assets/images/Sculptures -->
+      <div class="gitem reveal reveal-d2" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/Barrtaa - the roots.png" alt="Barrtaa - the roots" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="Barrtaa – The Roots" data-ar="برطعة – الجذور">Barrtaa – The Roots</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d1" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/Kufor yasif - 100 celebration for the city cancun.png" alt="Kufor yasif - 100 celebration for the city cancun" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="Kufor Yasif – 100 Celebration for the City Cancun" data-ar="كفر ياسيف – الاحتفال المئوي للمدينة">Kufor Yasif – 100 Celebration for the City Cancun</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d2" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/Qasser al ser -  the silk road.png" alt="Qasser al ser - the silk road">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="Qasser al Ser – The Silk Road" data-ar="قصر السر – طريق الحرير">Qasser al Ser – The Silk Road</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d1" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/the guitar player_2.jpg" alt="the guitar player 2">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="The Guitar Player 2" data-ar="عازفة الغيتار 2">The Guitar Player 2</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d2" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/the guitar player 3.png" alt="the guitar player 3">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="The Guitar Player 3" data-ar="عازفة الغيتار 3">The Guitar Player 3</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d1" data-cat="sculpture">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Sculptures/the guitar player.png" alt="the guitar player">
+            <div class="gi-overlay">
+              <div class="gi-info">
+                <div class="gi-name" data-en="The Guitar Player" data-ar="عازفة الغيتار">The Guitar Player</div>
+                <div class="gi-meta"></div>
+                <div class="gi-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Old ink on paper.jpg" alt="Old Ink on Paper" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Old Ink on Paper" data-ar="حبر قديم على ورق">Old Ink on Paper</div>
+              <div class="gi-meta"></div>
+              <div class="gi-medium" data-en="Ink on paper" data-ar="حبر على ورق">Ink on paper</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/The past.jpg" alt="The Past" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="The Past" data-ar="الماضي">The Past</div>
+              <div class="gi-meta">1989</div>
+              <div class="gi-medium" data-en="Ink &amp; watercolour on paper" data-ar="حبر وألوان مائية على ورق">Ink &amp; watercolour on paper</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d2" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/The Spring, oil on canvas, 2010.jpg" alt="The Spring" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="The Spring" data-ar="الربيع">The Spring</div>
+              <div class="gi-meta">2010</div>
+              <div class="gi-medium" data-en="Oil on canvas" data-ar="زيت على قماش">Oil on canvas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/Woman Meditating, 55x77cm, 2004.jpg" alt="Woman Meditating" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Woman Meditating" data-ar="امرأة في تأمل">Woman Meditating</div>
+              <div class="gi-meta">2004</div>
+              <div class="gi-medium" data-en="Mixed media · 55 × 77 cm" data-ar="وسائط متعددة · 55 × 77 سم">Mixed media &middot; 55 &times; 77 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal reveal-d2" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/woman with swan,oil on canvas 100X120cm (1).jpg" alt="Woman with Swan" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Woman with Swan" data-ar="امرأة مع بجعة">Woman with Swan</div>
+              <div class="gi-meta">2020</div>
+              <div class="gi-medium" data-en="Oil on canvas · 100 × 120 cm" data-ar="زيت على قماش · 100 × 120 سم">Oil on canvas &middot; 100 &times; 120 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/The planting woman.jpg" alt="The Planting Woman" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="The Planting Woman" data-ar="المرأة الزارعة">The Planting Woman</div>
+              <div class="gi-meta">2004</div>
+              <div class="gi-medium" data-en="Mixed media on paper" data-ar="وسائط متعددة على ورق">Mixed media on paper</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Childhood I -->
+      <div class="gitem reveal" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/23. childhood,50x70cm,mixed.JPG" alt="Childhood I" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Childhood — I" data-ar="الطفولة — I">Childhood — I</div>
+              <div class="gi-meta" data-en="Mixed technique" data-ar="تقنية مختلطة">Mixed technique</div>
+              <div class="gi-medium">50 &times; 70 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Childhood II -->
+      <div class="gitem reveal reveal-d1" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/24. childhood,50x70cm,mixed.PNG" alt="Childhood II" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Childhood — II" data-ar="الطفولة — II">Childhood — II</div>
+              <div class="gi-meta" data-en="Mixed technique" data-ar="تقنية مختلطة">Mixed technique</div>
+              <div class="gi-medium">50 &times; 70 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grinding Coffee -->
+      <div class="gitem reveal reveal-d2" data-cat="painting">
+        <div class="gi-inner">
+          <div class="gi-canvas" style="background:#1a1410;">
+            <img src="assets/images/10.grinding coffee,50x70cm,mixed technique.jpg" alt="Grinding Coffee" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          </div>
+          <div class="gi-overlay">
+            <div class="gi-info">
+              <div class="gi-name" data-en="Grinding Coffee" data-ar="طحن القهوة">Grinding Coffee</div>
+              <div class="gi-meta" data-en="Mixed technique" data-ar="تقنية مختلطة">Mixed technique</div>
+              <div class="gi-medium">50 &times; 70 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-masonry -->
+  </div><!-- /gallery-body -->
+
+</div><!-- /gallery -->
+
+
+<!-- ════════════════════════════════════════
+     HAIFA GALLERY PAGE
+════════════════════════════════════════ -->
+<div id="page-haifa" class="page">
+
+  <div class="gallery-hero">
+    <div class="gallery-hero-line"></div>
+    <div class="gallery-hero-content">
+      <div class="gallery-hero-label" data-en="Cultural Space" data-ar="فضاء ثقافي">Cultural Space</div>
+      <h1 class="gallery-hero-title">
+        <span data-en="Haifa" data-ar="غاليري">Haifa</span><br>
+        <span class="haifa-title-row">
+          <em data-en="Gallery" data-ar="حيفا">Gallery</em>
+          <img src="assets/images/Logos/Logo 512x512.png" alt="Haifa Gallery" class="haifa-logo">
+        </span>
+      </h1>
+    </div>
+  </div>
+
+  <section class="haifa-about">
+    <div class="haifa-about-grid reveal">
+      <div class="haifa-about-text-col">
+        <p class="section-label" data-en="About the Gallery" data-ar="عن الغاليري">About the Gallery</p>
+        <h2 class="haifa-about-title"><span data-en="First Palestinian Arab Gallery" data-ar="أول غاليري فلسطيني عربي">First Palestinian Arab Gallery</span><br><em data-en="in Haifa since 1948" data-ar="في حيفا منذ 1948">in Haifa since 1948</em></h2>
+        <p class="haifa-about-body" data-en="Established in December 2020 by Souad Nasr Makhoul, Haifa Gallery opened its doors in the historic Wadi Al-Nisnas neighbourhood — occupying a 150-year-old building, formerly a wheat mill. It is the first Palestinian Arab gallery in Haifa since 1948, dedicated to preserving cultural heritage and promoting Palestinian and Arab identity through art, lectures, and community programmes." data-ar="أسّست سعاد نصر مخول غاليري حيفا في ديسمبر 2020، وفتح أبوابه في حي وادي النسناس التاريخي — محتلًّا مبنىً عمره 150 عامًا كان في الأصل طاحونة قمح. إنه أول غاليري فلسطيني عربي في حيفا منذ عام 1948، مُكرَّس لصون التراث الثقافي وتعزيز الهوية الفلسطينية والعربية من خلال الفن والمحاضرات والبرامج المجتمعية.">Established in December 2020 by Souad Nasr Makhoul, Haifa Gallery opened its doors in the historic Wadi Al-Nisnas neighbourhood — occupying a 150-year-old building, formerly a wheat mill. It is the first Palestinian Arab gallery in Haifa since 1948, dedicated to preserving cultural heritage and promoting Palestinian and Arab identity through art, lectures, and community programmes.</p>
+        <div class="haifa-stats">
+          <div class="haifa-stat"><div class="haifa-stat-n">2020</div><div class="haifa-stat-l" data-en="Established" data-ar="تأسيس">Established</div></div>
+          <div class="haifa-stat"><div class="haifa-stat-n">150</div><div class="haifa-stat-l" data-en="Year Old Building" data-ar="عامًا على المبنى">Year Old Building</div></div>
+          <div class="haifa-stat"><div class="haifa-stat-n">7+</div><div class="haifa-stat-l" data-en="Exhibitions" data-ar="معارض">Exhibitions</div></div>
+        </div>
+      </div>
+      <div class="haifa-info-cards">
+        <div class="haifa-info-card"><div class="haifa-info-title" data-en="Location" data-ar="الموقع">Location</div><div class="haifa-info-body" data-en="Wadi Al-Nisnas, Haifa" data-ar="وادي النسناس، حيفا">Wadi Al-Nisnas, Haifa</div></div>
+        <div class="haifa-info-card"><div class="haifa-info-title" data-en="Founded" data-ar="تأسيس">Founded</div><div class="haifa-info-body" data-en="December 2020" data-ar="ديسمبر 2020">December 2020</div></div>
+        <div class="haifa-info-card"><div class="haifa-info-title" data-en="Building" data-ar="المبنى">Building</div><div class="haifa-info-body" data-en="Historic 150-year-old former wheat mill" data-ar="طاحونة قمح تاريخية عمرها 150 عامًا">Historic 150-year-old former wheat mill</div></div>
+        <div class="haifa-info-card"><div class="haifa-info-title" data-en="Mission" data-ar="الرسالة">Mission</div><div class="haifa-info-body" data-en="Promoting Palestinian &amp; Arab cultural identity through art" data-ar="تعزيز الهوية الثقافية الفلسطينية والعربية من خلال الفن">Promoting Palestinian &amp; Arab cultural identity through art</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="haifa-photos">
+    <p class="section-label reveal" data-en="Gallery Space" data-ar="مساحة الغاليري">Gallery Space</p>
+    <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Inside the" data-ar="داخل">Inside the</span> <em data-en="Gallery" data-ar="الغاليري">Gallery</em></h2>
+    <div class="haifa-grid reveal reveal-d2">
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/488603072_2926413837521579_2027608596203338933_n.jpg" alt="Haifa Gallery"></div>
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/506607568_3003514439811518_5198768384341237018_n.jpg" alt="Haifa Gallery"></div>
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/532928262_3068461516650143_5154693822092393911_n.jpg" alt="Haifa Gallery"></div>
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/582420494_3165264366969857_2880520654881773137_n.jpg" alt="Haifa Gallery"></div>
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/Pop-Up exhibition ,Architecture 100, Technion, Haifa..jpg" alt="Pop-Up Exhibition at Technion"></div>
+      <div class="haifa-photo"><img src="assets/images/Haifa gallery/event 1.jpg" alt="Gallery Event"></div>
+    </div>
+  </section>
+
+  <section class="haifa-exhibitions">
+    <p class="section-label reveal" data-en="Programme" data-ar="البرنامج">Programme</p>
+    <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Exhibitions &amp;" data-ar="المعارض">Exhibitions &amp;</span> <em data-en="Activities" data-ar="والأنشطة">Activities</em></h2>
+    <div class="home-ex-cols reveal reveal-d2">
+      <div>
+        <p class="home-ex-col-title" data-en="Exhibitions" data-ar="المعارض">Exhibitions</p>
+        <ul class="home-ex-list">
+          <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="&ldquo;The Flood&rdquo; — Haifa Wadi Al Salib" data-ar="«الطوفان» — حيفا وادي الصليب">&ldquo;The Flood&rdquo; &mdash; Haifa Wadi Al Salib</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="Jaffa: The Old City" data-ar="يافا: المدينة القديمة">Jaffa: The Old City</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2021</span><span class="home-ex-name" data-en="Historical Palestinian Cities Plans" data-ar="خرائط المدن الفلسطينية التاريخية">Historical Palestinian Cities Plans</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2021&ndash;22</span><span class="home-ex-name" data-en="Palestinian Embroidery Bazaar" data-ar="بازار التطريز الفلسطيني">Palestinian Embroidery Bazaar</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2021</span><span class="home-ex-name" data-en="The Woman in Souad Nasr Paintings" data-ar="المرأة في لوحات سعاد نصر">The Woman in Souad Nasr Paintings</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2023</span><span class="home-ex-name" data-en="The Old City of Haifa" data-ar="مدينة حيفا القديمة">The Old City of Haifa</span></li>
+          <li class="home-ex-item"><span class="home-ex-year">2023</span><span class="home-ex-name" data-en="The Expelled Arts: Artists of Haifa Pre-1948" data-ar="الفن المُهجَّر: فنانو حيفا قبل 1948">The Expelled Arts: Artists of Haifa Pre-1948</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="home-ex-col-title" data-en="Lectures &amp; Activities" data-ar="المحاضرات والأنشطة">Lectures &amp; Activities</p>
+        <ul class="home-ex-list">
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Restoration of historical buildings" data-ar="ترميم المباني التاريخية">Restoration of historical buildings</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Canaanite ancestors &amp; pre-Islamic markets" data-ar="الأجداد الكنعانيون والأسواق ما قبل الإسلامية">Canaanite ancestors &amp; pre-Islamic markets</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Theft of Palestinian property" data-ar="سرقة الممتلكات الفلسطينية">Theft of Palestinian property</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Educational lectures on historic Haifa" data-ar="محاضرات تعليمية عن حيفا التاريخية">Educational lectures on historic Haifa</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="School visits, tourist groups &amp; women's clubs" data-ar="زيارات مدارس، ومجموعات سياحية، وأندية نسائية">School visits, tourist groups &amp; women&rsquo;s clubs</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Clubs for people with disabilities &amp; the elderly" data-ar="أندية لذوي الاحتياجات الخاصة وكبار السن">Clubs for people with disabilities &amp; the elderly</span></li>
+          <li class="home-ex-item"><span class="home-ex-name" data-en="Heritage exhibitions on regional culture" data-ar="معارض تراثية عن الثقافة الإقليمية">Heritage exhibitions on regional culture</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /haifa -->
+
+
+<!-- ════════════════════════════════════════
+     SHOP PAGE
+════════════════════════════════════════ -->
+<div id="page-shop" class="page">
+
+  <div class="gallery-hero">
+    <div class="gallery-hero-line"></div>
+    <div class="gallery-hero-content">
+      <div class="gallery-hero-label" data-en="Prints" data-ar="مطبوعات">Prints</div>
+      <h1 class="gallery-hero-title"><span data-en="Shop &amp;" data-ar="المتجر">Shop &amp;</span><br><em data-en="Prints" data-ar="والمطبوعات">Prints</em></h1>
+    </div>
+  </div>
+
+  <section class="shop-intro reveal">
+    <p class="section-label" data-en="Original Prints" data-ar="مطبوعات أصلية">Original Prints</p>
+    <h2 class="shop-intro-title"><span data-en="Bring the work" data-ar="أحضر العمل">Bring the work</span><br><em data-en="into your home" data-ar="إلى منزلك">into your home</em></h2>
+    <p class="shop-intro-text" data-en="High-quality fine-art prints of Souad Nasr Makhoul's paintings, printed on archival paper. Each print is signed and comes with a certificate of authenticity. Click any print to select a size and order securely via PayPal — credit cards, debit cards and PayPal balance accepted." data-ar="مطبوعات فنية عالية الجودة من لوحات سعاد نصر مخول، مطبوعة على ورق أرشيفي. كل مطبوعة موقَّعة وترفقها شهادة أصالة. اضغط على أي مطبوعة لاختيار الحجم والطلب بأمان عبر PayPal — تُقبل بطاقات الائتمان والبطاقات المصرفية ورصيد PayPal.">High-quality fine-art prints of Souad Nasr Makhoul&rsquo;s paintings, printed on archival paper. Each print is signed and comes with a certificate of authenticity. Click any print to select a size and order securely via PayPal — credit cards, debit cards and PayPal balance accepted.</p>
+  </section>
+
+  <section class="shop-grid-section">
+    <div class="shop-grid reveal">
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/the%20birth%2C%20oil%20on%20canvas%2C%20100X120cm%2C%202020.jpg" alt="The Birth"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="The Birth" data-ar="الولادة">The Birth</div>
+          <div class="shop-meta" data-en="Oil on canvas · 100 × 120 cm · 2020" data-ar="زيت على قماش · 100 × 120 سم · 2020">Oil on canvas &middot; 100 &times; 120 cm &middot; 2020</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+            <span class="shop-size">70&times;100 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/women%20toward%20the%20light%2C%20oil%20on%20canvas%2C%20100X120cm%2C%202020%20(1).jpg" alt="Women Toward the Light"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="Women Toward the Light" data-ar="نساء نحو الضوء">Women Toward the Light</div>
+          <div class="shop-meta" data-en="Oil on canvas · 100 × 120 cm · 2020" data-ar="زيت على قماش · 100 × 120 سم · 2020">Oil on canvas &middot; 100 &times; 120 cm &middot; 2020</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+            <span class="shop-size">70&times;100 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/Woman%20Meditating%2C%2055x77cm%2C%202004.jpg" alt="Woman Meditating"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="Woman Meditating" data-ar="امرأة في تأمل">Woman Meditating</div>
+          <div class="shop-meta" data-en="Mixed media · 55 × 77 cm · 2004" data-ar="وسائط متعددة · 55 × 77 سم · 2004">Mixed media &middot; 55 &times; 77 cm &middot; 2004</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">55&times;77 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/The%20Spring%2C%20oil%20on%20canvas%2C%202010.jpg" alt="The Spring"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="The Spring" data-ar="الربيع">The Spring</div>
+          <div class="shop-meta" data-en="Oil on canvas · 2010" data-ar="زيت على قماش · 2010">Oil on canvas &middot; 2010</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+            <span class="shop-size">70&times;100 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/The%20planting%20woman.jpg" alt="The Planting Woman"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="The Planting Woman" data-ar="المرأة الزارعة">The Planting Woman</div>
+          <div class="shop-meta" data-en="Mixed media on paper · 2004" data-ar="وسائط متعددة على ورق · 2004">Mixed media on paper &middot; 2004</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/The%20past.jpg" alt="The Past"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="The Past" data-ar="الماضي">The Past</div>
+          <div class="shop-meta" data-en="Oil on canvas" data-ar="زيت على قماش">Oil on canvas</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+            <span class="shop-size">70&times;100 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/10.grinding%20coffee%2C50x70cm%2Cmixed%20technique.jpg" alt="Grinding Coffee"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="Grinding Coffee" data-ar="طحن القهوة">Grinding Coffee</div>
+          <div class="shop-meta" data-en="Mixed technique · 50 × 70 cm" data-ar="تقنية مختلطة · 50 × 70 سم">Mixed technique &middot; 50 &times; 70 cm</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/23.%20childhood%2C50x70cm%2Cmixed.JPG" alt="Childhood I"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="Childhood I" data-ar="الطفولة I">Childhood I</div>
+          <div class="shop-meta" data-en="Mixed media · 50 × 70 cm" data-ar="وسائط متعددة · 50 × 70 سم">Mixed media &middot; 50 &times; 70 cm</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-img"><img src="assets/images/Old%20ink%20on%20paper.jpg" alt="Old Ink on Paper"></div>
+        <div class="shop-info">
+          <div class="shop-name" data-en="Old Ink on Paper" data-ar="حبر قديم على ورق">Old Ink on Paper</div>
+          <div class="shop-meta" data-en="Ink on paper" data-ar="حبر على ورق">Ink on paper</div>
+          <div class="shop-sizes">
+            <span class="shop-size">30&times;40 cm</span>
+            <span class="shop-size">50&times;70 cm</span>
+          </div>
+          <p class="shop-click-hint" data-en="Click to view &amp; order" data-ar="اضغط للعرض والطلب">Click to view &amp; order</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="shop-note reveal">
+    <div class="shop-note-inner">
+      <p class="shop-note-title" data-en="Bespoke Orders" data-ar="طلبات مخصصة">Bespoke Orders</p>
+      <p class="shop-note-text" data-en="Looking for a specific size, framing option, or a painting not listed here? Get in touch and we will find the right solution for you." data-ar="هل تبحث عن حجم معيّن، أو خيار تأطير، أو لوحة غير مدرجة هنا؟ تواصل معنا وسنجد الحل المناسب لك.">Looking for a specific size, framing option, or a painting not listed here? Get in touch and we will find the right solution for you.</p>
+      <a class="btn-gold" href="mailto:souadnasr@gmail.com?subject=Bespoke%20Print%20Enquiry" data-en="Contact the Studio" data-ar="تواصل مع الاستوديو">Contact the Studio</a>
+    </div>
+  </section>
+
+</div><!-- /shop -->
+
+
+<!-- ════════════════ SHARED FOOTER ════════════════ -->
+<div class="site-footer-wrap">
+<footer class="site-footer">
+    <div class="footer-name">Souad Nasr Makhoul</div>
+    <div class="footer-socials">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/souadnasr_?igsh=MWEwNzZ2ZjZwa3g1Mw%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/share/1AjYv1HkNt/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/souad-makhoul-39339455/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+    </div>
+<div class="footer-copy" data-en="© 2025 Souad Nasr Makhoul. All rights reserved." data-ar="© 2025 سعاد نصر مخول. جميع الحقوق محفوظة.">&copy; 2025 Souad Nasr Makhoul. All rights reserved.</div>
+  </footer>
+</div>
+
+
+<script>
+
+
+
+  /* ── Mobile menu helpers ── */
+  function toggleMobileMenu() {
+    var btn = document.querySelector('.hamburger-btn');
+    var menu = document.getElementById('nav-links-menu');
+    if (!btn || !menu) return;
+    btn.classList.toggle('active');
+    menu.classList.toggle('mobile-open');
+  }
+  function closeMobileMenu() {
+    var btn = document.querySelector('.hamburger-btn');
+    var menu = document.getElementById('nav-links-menu');
+    if (!btn || !menu) return;
+    btn.classList.remove('active');
+    menu.classList.remove('mobile-open');
+  }
+  // click outside closes menu
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('nav-links-menu');
+    var btn = document.querySelector('.hamburger-btn');
+    if (menu && btn && menu.classList.contains('mobile-open')) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    }
+  });
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) closeMobileMenu();
+  });
+
+  /* ── Lightbox ── */
+  var lbItems = [];
+  var lbIndex = 0;
+
+  function buildLightboxItems() {
+    lbItems = [];
+    document.querySelectorAll('#page-gallery .gitem').forEach(function(item) {
+      if (item.style.display === 'none') return;
+      var img = item.querySelector('img');
+      var src = img ? img.src : '';
+      var canvas = item.querySelector('.gi-canvas');
+      // for non-photo items, skip or use background
+      var name   = item.querySelector('.gi-name')   ? item.querySelector('.gi-name').textContent   : '';
+      var meta   = item.querySelector('.gi-meta')   ? item.querySelector('.gi-meta').textContent   : '';
+      var medium = item.querySelector('.gi-medium') ? item.querySelector('.gi-medium').textContent : '';
+      if (src) lbItems.push({ src: src, name: name, meta: meta, medium: medium, el: item });
+    });
+  }
+
+  function openLightbox(el) {
+    buildLightboxItems();
+    var idx = lbItems.findIndex(function(i) { return i.el === el; });
+    if (idx === -1) return;
+    lbIndex = idx;
+    showLbItem();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showLbItem() {
+    var item = lbItems[lbIndex];
+    if (!item) return;
+    var img = document.getElementById('lbImg');
+    img.style.opacity = '0';
+    img.src = item.src;
+    img.onload = function() { img.style.transition = 'opacity 0.25s'; img.style.opacity = '1'; };
+    document.getElementById('lbTitle').textContent  = item.name;
+    document.getElementById('lbMeta').textContent   = item.meta;
+    document.getElementById('lbMedium').textContent = item.medium;
+    document.getElementById('lbCounter').textContent = (lbIndex + 1) + ' / ' + lbItems.length;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOutside(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+
+  function lbNav(dir) {
+    lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+    showLbItem();
+  }
+
+  // keyboard support
+  document.addEventListener('keydown', function(e) {
+    var lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft')  lbNav(-1);
+  });
+
+  // touch swipe support
+  var lbTouchX = null;
+  document.getElementById('lightbox') && (function() {
+    var lb = document.getElementById('lightbox');
+    lb.addEventListener('touchstart', function(e) {
+      lbTouchX = e.touches[0].clientX;
+    }, { passive: true });
+    lb.addEventListener('touchend', function(e) {
+      if (lbTouchX === null) return;
+      var dx = e.changedTouches[0].clientX - lbTouchX;
+      if (Math.abs(dx) > 40) lbNav(dx < 0 ? 1 : -1);
+      lbTouchX = null;
+    }, { passive: true });
+  })();
+
+  // attach click to gallery items
+  function attachLightboxClicks() {
+    document.querySelectorAll('#page-gallery .gitem').forEach(function(item) {
+      item.addEventListener('click', function() { openLightbox(item); });
+    });
+  }
+  attachLightboxClicks();
+
+  /* ── Page switching ── */
+  function showPage(id, skipHash) {
+    // hide all
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    // show target
+    var el = document.getElementById('page-' + id);
+    if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+    // nav active state
+    document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+    var navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    // hide cart unless staying on shop
+    if (id !== 'shop') {
+      var cartEl = document.getElementById('cart');
+      if (cartEl) cartEl.classList.add('hidden');
+    }
+    // update URL hash so refresh restores this page
+    if (!skipHash) { window.location.hash = id; }
+    // trigger reveals for newly shown page
+    setTimeout(triggerReveals, 80);
+    return false;
+  }
+
+  // restore page from URL hash on load
+  (function() {
+    var hash = window.location.hash.replace('#', '');
+    var validPages = ['home', 'gallery', 'haifa', 'about', 'shop'];
+    if (hash && validPages.indexOf(hash) !== -1) {
+      showPage(hash, true);
+    }
+  })();
+
+  /* ── Scroll reveal ── */
+  function triggerReveals() {
+    var activePage = document.querySelector('.page.active');
+    if (!activePage) return;
+    var reveals = activePage.querySelectorAll('.reveal:not(.visible)');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(function(el) { obs.observe(el); });
+  }
+  triggerReveals();
+
+  /* ── Language toggle ── */
+  function setLang(lang) {
+    var html = document.documentElement;
+    html.lang = lang;
+    html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      el.innerHTML = el.dataset[lang] || el.dataset.en;
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    localStorage.setItem('snm-lang', lang);
+  }
+  (function() {
+    var saved = localStorage.getItem('snm-lang');
+    if (saved === 'ar') setLang('ar');
+  })();
+
+  /* ── Gallery filter ── */
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.gitem').forEach(function(item) {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<script>
+// ── PayPal Config ─────────────────────────────────────────────
+// Setup (free, ~10 min):
+//   1. Log in to https://developer.paypal.com/dashboard/applications
+//   2. Click "Create App" → name it anything → select "Merchant"
+//   3. Switch to LIVE (top right toggle), copy the Client ID
+//   4. Replace YOUR_CLIENT_ID below with your Client ID
+var PAYPAL_CLIENT_ID = 'YOUR_CLIENT_ID';
+
+// Prices in ILS — change as needed
+var PRINT_PRICES = {
+  '30\u00d740 cm':  { label: '\u20aa190', amount: 190 },
+  '50\u00d770 cm':  { label: '\u20aa300', amount: 300 },
+  '55\u00d777 cm':  { label: '\u20aa300', amount: 300 },
+  '70\u00d7100 cm': { label: '\u20aa450', amount: 450 }
+};
+
+var shopModalSelectedSize = null;
+var shopModalCurrentItem  = null;
+var paypalBtnsRendered    = false;
+
+// Load PayPal SDK dynamically once client-id is configured
+if (PAYPAL_CLIENT_ID !== 'YOUR_CLIENT_ID') {
+  (function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID
+          + '&currency=ILS&enable-funding=card,applepay,googlepay&components=buttons';
+    document.head.appendChild(s);
+  })();
+}
+
+function openShopModal(itemEl) {
+  var img   = itemEl.querySelector('.shop-img img');
+  var name  = itemEl.querySelector('.shop-name').textContent;
+  var meta  = itemEl.querySelector('.shop-meta').textContent;
+  var sizes = Array.from(itemEl.querySelectorAll('.shop-size')).map(function(s){ return s.textContent; });
+
+  document.getElementById('shopModalImg').src = img ? img.src : '';
+  document.getElementById('shopModalImg').alt = name;
+  document.getElementById('shopModalName').textContent = name;
+  document.getElementById('shopModalMeta').textContent = meta;
+  document.getElementById('shopModalStatus').textContent = '';
+  document.getElementById('shopModalPaypalWrap').style.display = 'none';
+  document.getElementById('shopModalPaypalBtns').innerHTML = '';
+  paypalBtnsRendered = false;
+
+  var sizesEl = document.getElementById('shopModalSizes');
+  sizesEl.innerHTML = '';
+  sizes.forEach(function(s) {
+    var btn = document.createElement('button');
+    btn.className = 'shop-modal-size-btn';
+    var p = PRINT_PRICES[s];
+    btn.textContent = s + (p ? ' \u2014 ' + p.label : '');
+    btn.setAttribute('data-size', s);
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.shop-modal-size-btn').forEach(function(b){ b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      shopModalSelectedSize = s;
+      document.getElementById('shopModalStatus').textContent = '';
+      showCheckout();
+    });
+    sizesEl.appendChild(btn);
+  });
+
+  shopModalSelectedSize = null;
+  shopModalCurrentItem  = { name: name, meta: meta };
+  document.getElementById('shopModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showCheckout() {
+  var wrap = document.getElementById('shopModalPaypalWrap');
+  wrap.style.display = 'block';
+
+  if (typeof paypal !== 'undefined' && !paypalBtnsRendered) {
+    paypalBtnsRendered = true;
+    paypal.Buttons({
+      style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'pay' },
+      createOrder: function(data, actions) {
+        var p = PRINT_PRICES[shopModalSelectedSize] || {};
+        return actions.order.create({
+          application_context: { shipping_preference: 'GET_FROM_FILE' },
+          purchase_units: [{
+            amount: { value: (p.amount || 0).toString(), currency_code: 'ILS' },
+            description: shopModalCurrentItem.name + ' \u2014 ' + shopModalSelectedSize
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function() {
+          document.getElementById('shopModalStatus').textContent = 'Payment complete \u2014 thank you!';
+          setTimeout(closeShopModal, 2500);
+        });
+      },
+      onError: function() {
+        document.getElementById('shopModalStatus').textContent = 'Payment could not be completed. Please try again.';
+      }
+    }).render('#shopModalPaypalBtns');
+
+  } else if (typeof paypal === 'undefined') {
+    // Not yet configured — show contact message
+    document.getElementById('shopModalPaypalBtns').innerHTML =
+      '<p style="font-size:0.82rem;color:var(--sand);opacity:0.75;margin-top:0.5rem;">Online payment coming soon. To order now: souadnasr@gmail.com</p>';
+  }
+}
+
+function closeShopModal() {
+  document.getElementById('shopModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeShopModalOutside(e) {
+  if (e.target === document.getElementById('shopModal')) closeShopModal();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.shop-item').forEach(function(item) {
+    item.addEventListener('click', function() { openShopModal(item); });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeShopModal();
+  });
+});
+// ── end shop
+</script>
+
+<!-- ── SHOP ITEM MODAL ── -->
+<div class="shop-modal" id="shopModal" onclick="closeShopModalOutside(event)">
+  <div class="shop-modal-inner" id="shopModalInner">
+    <button class="shop-modal-close" onclick="closeShopModal()">&times;</button>
+    <div class="shop-modal-img">
+      <img id="shopModalImg" src="" alt="">
+    </div>
+    <div class="shop-modal-info">
+      <div class="shop-modal-name" id="shopModalName"></div>
+      <div class="shop-modal-meta" id="shopModalMeta"></div>
+      <div class="shop-modal-size-label">Choose a size</div>
+      <div class="shop-modal-sizes" id="shopModalSizes"></div>
+      <div class="shop-modal-paypal-wrap" id="shopModalPaypalWrap" style="display:none;margin-top:1.2rem;">
+        <div id="shopModalPaypalBtns"></div>
+      </div>
+      <div class="shop-modal-added" id="shopModalStatus"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-prev" onclick="lbNav(-1)">&#8592;</button>
+  <button class="lightbox-next" onclick="lbNav(1)">&#8594;</button>
+  <div class="lightbox-inner">
+    <img class="lightbox-img" id="lbImg" src="" alt="">
+    <div class="lightbox-info">
+      <div class="lightbox-title" id="lbTitle"></div>
+      <div class="lightbox-meta" id="lbMeta"></div>
+      <div class="lightbox-medium" id="lbMedium"></div>
+    </div>
+  </div>
+  <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+</body>
+</html>
