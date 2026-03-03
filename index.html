@@ -1106,6 +1106,18 @@
     </div>
   </section>
 
+  <section class="haifa-photos">
+    <p class="section-label reveal" data-en="Transformation" data-ar="التحوّل">Transformation</p>
+    <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Before &amp; After" data-ar="قبل وبعد">Before &amp; After</span> <em data-en="the Gallery" data-ar="الغاليري">the Gallery</em></h2>
+    <div class="haifa-grid reveal reveal-d2">
+      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/01_Before.jpg" alt="Before — 1"></div>
+      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/02_Before.jpg" alt="Before — 2"></div>
+      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/03_Before.jpg" alt="Before — 3"></div>
+      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/04_Before.jpg" alt="Before — 4"></div>
+      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/After/20201226_164459.jpg" alt="After — 1"></div>
+    </div>
+  </section>
+
   <section class="haifa-exhibitions">
     <p class="section-label reveal" data-en="Programme" data-ar="البرنامج">Programme</p>
     <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Exhibitions &amp;" data-ar="المعارض">Exhibitions &amp;</span> <em data-en="Activities" data-ar="والأنشطة">Activities</em></h2>
@@ -1561,6 +1573,45 @@
       }
     });
   }
+
+  /* ── Haifa Photo Lightbox ── */
+  var haifaSrcs = [];
+  var haifaIdx  = 0;
+
+  function openHaifaPhoto(el) {
+    haifaSrcs = Array.from(document.querySelectorAll('#page-haifa .haifa-photo img'))
+                     .map(function(i) { return i.getAttribute('src'); });
+    var clicked = el.querySelector('img').getAttribute('src');
+    haifaIdx = haifaSrcs.indexOf(clicked);
+    if (haifaIdx === -1) haifaIdx = 0;
+    showHaifaLb();
+  }
+
+  function showHaifaLb() {
+    document.getElementById('haifa-lb-img').src = haifaSrcs[haifaIdx];
+    document.getElementById('haifa-lb-counter').textContent = (haifaIdx + 1) + ' / ' + haifaSrcs.length;
+    document.getElementById('haifa-lb').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeHaifaLb() {
+    document.getElementById('haifa-lb').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function haifaLbNav(dir) {
+    haifaIdx = (haifaIdx + dir + haifaSrcs.length) % haifaSrcs.length;
+    document.getElementById('haifa-lb-img').src = haifaSrcs[haifaIdx];
+    document.getElementById('haifa-lb-counter').textContent = (haifaIdx + 1) + ' / ' + haifaSrcs.length;
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var lb = document.getElementById('haifa-lb');
+    if (!lb || lb.style.display === 'none') return;
+    if (e.key === 'Escape')     closeHaifaLb();
+    if (e.key === 'ArrowRight') haifaLbNav(1);
+    if (e.key === 'ArrowLeft')  haifaLbNav(-1);
+  });
 </script>
 
 <script>
@@ -1723,6 +1774,15 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
   <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+
+<!-- ── Haifa Dedicated Lightbox ── -->
+<div id="haifa-lb" style="display:none;position:fixed;inset:0;z-index:9500;background:rgba(10,15,8,0.97);align-items:center;justify-content:center;" onclick="if(event.target===this)closeHaifaLb()">
+  <button onclick="closeHaifaLb()" style="position:fixed;top:1.5rem;right:2rem;font-size:2.5rem;color:rgba(245,242,236,0.85);background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:200;z-index:9520;line-height:1;">&times;</button>
+  <button onclick="haifaLbNav(-1)" style="position:fixed;left:1rem;top:50%;transform:translateY(-50%);background:rgba(15,22,8,0.6);border:1px solid rgba(138,158,110,0.4);color:#e6e0d0;cursor:pointer;font-size:1.6rem;padding:1rem 1.3rem;line-height:1;border-radius:2px;z-index:9510;">&#8592;</button>
+  <button onclick="haifaLbNav(1)"  style="position:fixed;right:1rem;top:50%;transform:translateY(-50%);background:rgba(15,22,8,0.6);border:1px solid rgba(138,158,110,0.4);color:#e6e0d0;cursor:pointer;font-size:1.6rem;padding:1rem 1.3rem;line-height:1;border-radius:2px;z-index:9510;">&#8594;</button>
+  <img id="haifa-lb-img" src="" alt="Haifa Gallery" style="height:85vh;width:auto;max-width:88vw;object-fit:contain;box-shadow:0 0 80px rgba(0,0,0,0.9);">
+  <div id="haifa-lb-counter" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,242,236,0.4);font-family:'Jost',sans-serif;"></div>
 </div>
 </body>
 </html>

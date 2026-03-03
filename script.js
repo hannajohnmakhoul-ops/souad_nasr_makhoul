@@ -3,18 +3,43 @@ var lbItems = [];
 var lbIndex = 0;
 
 /* ── Haifa Photo Lightbox ── */
+var haifaSrcs = [];
+var haifaIdx  = 0;
+
 function openHaifaPhoto(el) {
-  lbItems = [];
-  document.querySelectorAll('#page-haifa .haifa-photo img').forEach(function(img) {
-    lbItems.push({ src: img.src, name: '', meta: '', medium: '', el: img.parentElement });
-  });
-  var clickedSrc = el.querySelector('img').src;
-  lbIndex = lbItems.findIndex(function(i) { return i.src === clickedSrc; });
-  if (lbIndex === -1) lbIndex = 0;
-  showLbItem();
-  document.getElementById('lightbox').classList.add('open');
+  haifaSrcs = Array.from(document.querySelectorAll('#page-haifa .haifa-photo img'))
+                   .map(function(i) { return i.getAttribute('src'); });
+  var clicked = el.querySelector('img').getAttribute('src');
+  haifaIdx = haifaSrcs.indexOf(clicked);
+  if (haifaIdx === -1) haifaIdx = 0;
+  showHaifaLb();
+}
+
+function showHaifaLb() {
+  document.getElementById('haifa-lb-img').src = haifaSrcs[haifaIdx];
+  document.getElementById('haifa-lb-counter').textContent = (haifaIdx + 1) + ' / ' + haifaSrcs.length;
+  document.getElementById('haifa-lb').style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
+
+function closeHaifaLb() {
+  document.getElementById('haifa-lb').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function haifaLbNav(dir) {
+  haifaIdx = (haifaIdx + dir + haifaSrcs.length) % haifaSrcs.length;
+  document.getElementById('haifa-lb-img').src = haifaSrcs[haifaIdx];
+  document.getElementById('haifa-lb-counter').textContent = (haifaIdx + 1) + ' / ' + haifaSrcs.length;
+}
+
+document.addEventListener('keydown', function(e) {
+  var lb = document.getElementById('haifa-lb');
+  if (!lb || lb.style.display === 'none') return;
+  if (e.key === 'Escape')     closeHaifaLb();
+  if (e.key === 'ArrowRight') haifaLbNav(1);
+  if (e.key === 'ArrowLeft')  haifaLbNav(-1);
+});
 
 /* ── Map Actions ── */
 function toggleShareMenu(e) {
@@ -98,9 +123,14 @@ function showLbItem() {
   var item = lbItems[lbIndex];
   if (!item) return;
   var img = document.getElementById('lbImg');
+  img.style.transition = '';
   img.style.opacity = '0';
+  img.onload = null;
+  function revealImg() { img.style.transition = 'opacity 0.25s'; img.style.opacity = '1'; }
+  img.onload = revealImg;
   img.src = item.src;
-  img.onload = function() { img.style.transition = 'opacity 0.25s'; img.style.opacity = '1'; };
+  // image already cached — onload won't fire, show immediately
+  if (img.complete && img.naturalWidth > 0) { img.onload = null; revealImg(); }
   document.getElementById('lbTitle').textContent  = item.name;
   document.getElementById('lbMeta').textContent   = item.meta;
   document.getElementById('lbMedium').textContent = item.medium;
