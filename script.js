@@ -2,6 +2,20 @@
 var lbItems = [];
 var lbIndex = 0;
 
+/* ── Haifa Photo Lightbox ── */
+function openHaifaPhoto(el) {
+  lbItems = [];
+  document.querySelectorAll('#page-haifa .haifa-photo img').forEach(function(img) {
+    lbItems.push({ src: img.src, name: '', meta: '', medium: '', el: img.parentElement });
+  });
+  var clickedSrc = el.querySelector('img').src;
+  lbIndex = lbItems.findIndex(function(i) { return i.src === clickedSrc; });
+  if (lbIndex === -1) lbIndex = 0;
+  showLbItem();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 /* ── Map Actions ── */
 function toggleShareMenu(e) {
   e.stopPropagation();
@@ -115,6 +129,30 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowRight') lbNav(1);
   if (e.key === 'ArrowLeft')  lbNav(-1);
 });
+
+// touch swipe support — lock background scroll, navigate on horizontal swipe
+(function() {
+  var lb = document.getElementById('lightbox');
+  var txStart = 0, tyStart = 0;
+
+  lb.addEventListener('touchstart', function(e) {
+    txStart = e.touches[0].clientX;
+    tyStart = e.touches[0].clientY;
+  }, { passive: true });
+
+  lb.addEventListener('touchmove', function(e) {
+    // always block background scroll when lightbox is open
+    e.preventDefault();
+  }, { passive: false });
+
+  lb.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - txStart;
+    var dy = e.changedTouches[0].clientY - tyStart;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      lbNav(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+})();
 
 // attach click to gallery items
 function attachLightboxClicks() {
