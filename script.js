@@ -22,16 +22,61 @@ function showHaifaLb() {
   document.body.style.overflow = 'hidden';
 }
 
+var haifaGridExpanded = false;
+var exListExpanded = false;
+
+function initExList() {
+  ['ex-list-exhibitions', 'ex-list-activities'].forEach(function(id) {
+    var items = document.querySelectorAll('#' + id + ' .home-ex-item');
+    items.forEach(function(item, i) { item.style.display = i >= 3 ? 'none' : ''; });
+  });
+  exListExpanded = false;
+  var btn = document.getElementById('ex-expand-btn');
+  if (btn) {
+    btn.classList.remove('expanded');
+    btn.querySelector('.haifa-expand-label').textContent = 'Show All';
+  }
+}
+
+function toggleExList() {
+  exListExpanded = !exListExpanded;
+  ['ex-list-exhibitions', 'ex-list-activities'].forEach(function(id) {
+    var items = document.querySelectorAll('#' + id + ' .home-ex-item');
+    items.forEach(function(item, i) {
+      if (i >= 3) item.style.display = exListExpanded ? '' : 'none';
+    });
+  });
+  var btn = document.getElementById('ex-expand-btn');
+  btn.classList.toggle('expanded', exListExpanded);
+  btn.querySelector('.haifa-expand-label').textContent = exListExpanded ? 'Show Less' : 'Show All';
+  if (!exListExpanded) { document.getElementById('ex-list-exhibitions').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+}
+
+function initHaifaGrid() {
+  var photos = document.querySelectorAll('#haifa-main-grid .haifa-photo');
+  photos.forEach(function(photo, i) {
+    photo.style.display = i >= 9 ? 'none' : '';
+  });
+  haifaGridExpanded = false;
+  var btn = document.getElementById('haifa-expand-btn');
+  if (btn) {
+    btn.classList.remove('expanded');
+    btn.querySelector('.haifa-expand-label').textContent = 'Show All Photos';
+  }
+}
+
 function toggleHaifaGrid() {
   var grid = document.getElementById('haifa-main-grid');
   var btn  = document.getElementById('haifa-expand-btn');
   var label = btn.querySelector('.haifa-expand-label');
-  var expanded = grid.classList.toggle('expanded');
-  btn.classList.toggle('expanded', expanded);
-  label.setAttribute('data-en', expanded ? 'Show Less' : 'Show All Photos');
-  label.setAttribute('data-ar', expanded ? 'عرض أقل' : 'عرض جميع الصور');
-  label.textContent = expanded ? 'Show Less' : 'Show All Photos';
-  if (!expanded) { grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  haifaGridExpanded = !haifaGridExpanded;
+  var photos = grid.querySelectorAll('.haifa-photo');
+  photos.forEach(function(photo, i) {
+    if (i >= 9) photo.style.display = haifaGridExpanded ? '' : 'none';
+  });
+  btn.classList.toggle('expanded', haifaGridExpanded);
+  label.textContent = haifaGridExpanded ? 'Show Less' : 'Show All Photos';
+  if (!haifaGridExpanded) { grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 }
 
 function closeHaifaLb() {
@@ -219,8 +264,13 @@ function showPage(id, skipHash) {
   if (!skipHash) { window.location.hash = id; }
   // trigger reveals for newly shown page
   setTimeout(triggerReveals, 80);
+  // reset haifa grid to collapsed when navigating to haifa page
+  if (id === 'haifa') { initHaifaGrid(); initExList(); }
   return false;
 }
+
+initHaifaGrid();
+initExList();
 
 // restore page from URL hash on load
 (function() {

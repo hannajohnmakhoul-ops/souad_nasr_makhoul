@@ -1107,7 +1107,7 @@
     <div class="haifa-expand-wrap">
       <button class="haifa-expand-btn" id="haifa-expand-btn" onclick="toggleHaifaGrid()">
         <span class="haifa-expand-label" data-en="Show All Photos" data-ar="عرض جميع الصور">Show All Photos</span>
-        <span class="haifa-expand-arrow">&#8964;</span>
+        <span class="haifa-expand-arrow"></span>
       </button>
     </div>
   </section>
@@ -1130,7 +1130,7 @@
     <div class="home-ex-cols reveal reveal-d2">
       <div>
         <p class="home-ex-col-title" data-en="Exhibitions" data-ar="المعارض">Exhibitions</p>
-        <ul class="home-ex-list">
+        <ul class="home-ex-list" id="ex-list-exhibitions">
           <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="&ldquo;The Flood&rdquo; — Haifa Wadi Al Salib" data-ar="«الطوفان» — حيفا وادي الصليب">&ldquo;The Flood&rdquo; &mdash; Haifa Wadi Al Salib</span></li>
           <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="Jaffa: The Old City" data-ar="يافا: المدينة القديمة">Jaffa: The Old City</span></li>
           <li class="home-ex-item"><span class="home-ex-year">2021</span><span class="home-ex-name" data-en="Historical Palestinian Cities Plans" data-ar="خرائط المدن الفلسطينية التاريخية">Historical Palestinian Cities Plans</span></li>
@@ -1142,7 +1142,7 @@
       </div>
       <div>
         <p class="home-ex-col-title" data-en="Lectures &amp; Activities" data-ar="المحاضرات والأنشطة">Lectures &amp; Activities</p>
-        <ul class="home-ex-list">
+        <ul class="home-ex-list" id="ex-list-activities">
           <li class="home-ex-item"><span class="home-ex-name" data-en="Restoration of historical buildings" data-ar="ترميم المباني التاريخية">Restoration of historical buildings</span></li>
           <li class="home-ex-item"><span class="home-ex-name" data-en="Canaanite ancestors &amp; pre-Islamic markets" data-ar="الأجداد الكنعانيون والأسواق ما قبل الإسلامية">Canaanite ancestors &amp; pre-Islamic markets</span></li>
           <li class="home-ex-item"><span class="home-ex-name" data-en="Theft of Palestinian property" data-ar="سرقة الممتلكات الفلسطينية">Theft of Palestinian property</span></li>
@@ -1152,6 +1152,12 @@
           <li class="home-ex-item"><span class="home-ex-name" data-en="Heritage exhibitions on regional culture" data-ar="معارض تراثية عن الثقافة الإقليمية">Heritage exhibitions on regional culture</span></li>
         </ul>
       </div>
+    </div>
+    <div class="haifa-expand-wrap" style="margin-top:2.5rem;">
+      <button class="haifa-expand-btn" id="ex-expand-btn" onclick="toggleExList()">
+        <span class="haifa-expand-label">Show All</span>
+        <span class="haifa-expand-arrow"></span>
+      </button>
     </div>
   </section>
 
