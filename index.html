@@ -1632,7 +1632,7 @@
   function initHaifaGrid() {
     haifaGridExpanded = false;
     var photos = document.querySelectorAll('#haifa-main-grid .haifa-photo');
-    photos.forEach(function(p, i) { p.style.display = i >= 9 ? 'none' : ''; });
+    photos.forEach(function(p, i) { p.style.display = i >= 3 ? 'none' : ''; });
     var btn = document.getElementById('haifa-expand-btn');
     if (btn) { btn.classList.remove('expanded'); btn.querySelector('.haifa-expand-label').textContent = 'Show All Photos'; }
   }
@@ -1640,7 +1640,7 @@
   function toggleHaifaGrid() {
     haifaGridExpanded = !haifaGridExpanded;
     document.querySelectorAll('#haifa-main-grid .haifa-photo').forEach(function(p, i) {
-      if (i >= 9) p.style.display = haifaGridExpanded ? '' : 'none';
+      if (i >= 3) p.style.display = haifaGridExpanded ? '' : 'none';
     });
     var btn = document.getElementById('haifa-expand-btn');
     btn.classList.toggle('expanded', haifaGridExpanded);
