@@ -1054,7 +1054,7 @@
   <section class="haifa-photos">
     <p class="section-label reveal" data-en="Gallery Space" data-ar="مساحة الغاليري">Gallery Space</p>
     <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Inside the" data-ar="داخل">Inside the</span> <em data-en="Gallery" data-ar="الغاليري">Gallery</em></h2>
-    <div class="haifa-grid reveal reveal-d2">
+    <div class="haifa-grid reveal reveal-d2" id="haifa-main-grid">
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201219_222617.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_115056 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_131515 copy.jpg" alt="Haifa Gallery"></div>
@@ -1103,6 +1103,12 @@
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/582420494_3165264366969857_2880520654881773137_n.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/IMG_0133 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/event 1.jpg" alt="Haifa Gallery"></div>
+    </div>
+    <div class="haifa-expand-wrap">
+      <button class="haifa-expand-btn" id="haifa-expand-btn" onclick="toggleHaifaGrid()">
+        <span class="haifa-expand-label" data-en="Show All Photos" data-ar="عرض جميع الصور">Show All Photos</span>
+        <span class="haifa-expand-arrow">&#8964;</span>
+      </button>
     </div>
   </section>
 

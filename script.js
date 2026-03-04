@@ -22,6 +22,18 @@ function showHaifaLb() {
   document.body.style.overflow = 'hidden';
 }
 
+function toggleHaifaGrid() {
+  var grid = document.getElementById('haifa-main-grid');
+  var btn  = document.getElementById('haifa-expand-btn');
+  var label = btn.querySelector('.haifa-expand-label');
+  var expanded = grid.classList.toggle('expanded');
+  btn.classList.toggle('expanded', expanded);
+  label.setAttribute('data-en', expanded ? 'Show Less' : 'Show All Photos');
+  label.setAttribute('data-ar', expanded ? 'عرض أقل' : 'عرض جميع الصور');
+  label.textContent = expanded ? 'Show Less' : 'Show All Photos';
+  if (!expanded) { grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+}
+
 function closeHaifaLb() {
   document.getElementById('haifa-lb').style.display = 'none';
   document.body.style.overflow = '';
