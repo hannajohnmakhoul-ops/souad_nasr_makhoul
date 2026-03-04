@@ -27,29 +27,27 @@ var exListExpanded = false;
 
 function initExList() {
   ['ex-list-exhibitions', 'ex-list-activities'].forEach(function(id) {
-    var items = document.querySelectorAll('#' + id + ' .home-ex-item');
-    items.forEach(function(item, i) { item.style.display = i >= 3 ? 'none' : ''; });
+    var list = document.getElementById(id);
+    if (list) list.style.display = 'none';
   });
   exListExpanded = false;
   var btn = document.getElementById('ex-expand-btn');
   if (btn) {
     btn.classList.remove('expanded');
-    btn.querySelector('.haifa-expand-label').textContent = 'Show All';
+    btn.querySelector('.haifa-expand-label').textContent = 'Full List';
   }
 }
 
 function toggleExList() {
   exListExpanded = !exListExpanded;
   ['ex-list-exhibitions', 'ex-list-activities'].forEach(function(id) {
-    var items = document.querySelectorAll('#' + id + ' .home-ex-item');
-    items.forEach(function(item, i) {
-      if (i >= 3) item.style.display = exListExpanded ? '' : 'none';
-    });
+    var list = document.getElementById(id);
+    if (list) list.style.display = exListExpanded ? '' : 'none';
   });
   var btn = document.getElementById('ex-expand-btn');
   btn.classList.toggle('expanded', exListExpanded);
-  btn.querySelector('.haifa-expand-label').textContent = exListExpanded ? 'Show Less' : 'Show All';
-  if (!exListExpanded) { document.getElementById('ex-list-exhibitions').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  btn.querySelector('.haifa-expand-label').textContent = exListExpanded ? 'Show Less' : 'Full List';
+  if (!exListExpanded) { document.getElementById('ex-expand-btn').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 }
 
 function initHaifaGrid() {
