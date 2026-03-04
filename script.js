@@ -228,7 +228,7 @@ function triggerReveals() {
     entries.forEach(function(e) {
       if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
-  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(function(el) { obs.observe(el); });
 }
 triggerReveals();

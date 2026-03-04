@@ -101,7 +101,7 @@ nav {
 }
 
 /* ── PAGE SYSTEM ── */
-.page { display: none; min-height: 100vh; overflow-x: hidden; max-width: 100%; }
+.page { display: none; min-height: 100vh; overflow-x: clip; max-width: 100%; }
 .page.active { display: block; }
 
 /* ── PAGE TRANSITION ── */
