@@ -1058,6 +1058,7 @@
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201219_222617.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_115056 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_131515 copy.jpg" alt="Haifa Gallery"></div>
+      <div id="haifa-extra-photos" style="display:none">
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_132212 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201224_132221 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/20201225_132257 copy.jpg" alt="Haifa Gallery"></div>
@@ -1103,6 +1104,7 @@
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/582420494_3165264366969857_2880520654881773137_n.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/IMG_0133 copy.jpg" alt="Haifa Gallery"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/event 1.jpg" alt="Haifa Gallery"></div>
+      </div><!-- /haifa-extra-photos -->
     </div>
     <div class="haifa-expand-wrap">
       <button class="haifa-expand-btn" id="haifa-expand-btn" onclick="toggleHaifaGrid()">
@@ -1130,7 +1132,7 @@
     <div class="home-ex-cols reveal reveal-d2">
       <div>
         <p class="home-ex-col-title" data-en="Exhibitions" data-ar="المعارض">Exhibitions</p>
-        <ul class="home-ex-list" id="ex-list-exhibitions">
+        <ul class="home-ex-list" id="ex-list-exhibitions" style="display:none">
           <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="&ldquo;The Flood&rdquo; — Haifa Wadi Al Salib" data-ar="«الطوفان» — حيفا وادي الصليب">&ldquo;The Flood&rdquo; &mdash; Haifa Wadi Al Salib</span></li>
           <li class="home-ex-item"><span class="home-ex-year">2020</span><span class="home-ex-name" data-en="Jaffa: The Old City" data-ar="يافا: المدينة القديمة">Jaffa: The Old City</span></li>
           <li class="home-ex-item"><span class="home-ex-year">2021</span><span class="home-ex-name" data-en="Historical Palestinian Cities Plans" data-ar="خرائط المدن الفلسطينية التاريخية">Historical Palestinian Cities Plans</span></li>
@@ -1142,7 +1144,7 @@
       </div>
       <div>
         <p class="home-ex-col-title" data-en="Lectures &amp; Activities" data-ar="المحاضرات والأنشطة">Lectures &amp; Activities</p>
-        <ul class="home-ex-list" id="ex-list-activities">
+        <ul class="home-ex-list" id="ex-list-activities" style="display:none">
           <li class="home-ex-item"><span class="home-ex-name" data-en="Restoration of historical buildings" data-ar="ترميم المباني التاريخية">Restoration of historical buildings</span></li>
           <li class="home-ex-item"><span class="home-ex-name" data-en="Canaanite ancestors &amp; pre-Islamic markets" data-ar="الأجداد الكنعانيون والأسواق ما قبل الإسلامية">Canaanite ancestors &amp; pre-Islamic markets</span></li>
           <li class="home-ex-item"><span class="home-ex-name" data-en="Theft of Palestinian property" data-ar="سرقة الممتلكات الفلسطينية">Theft of Palestinian property</span></li>
@@ -1631,17 +1633,16 @@
 
   function initHaifaGrid() {
     haifaGridExpanded = false;
-    var photos = document.querySelectorAll('#haifa-main-grid .haifa-photo');
-    photos.forEach(function(p, i) { p.style.display = i >= 3 ? 'none' : ''; });
+    var extra = document.getElementById('haifa-extra-photos');
+    if (extra) extra.style.display = 'none';
     var btn = document.getElementById('haifa-expand-btn');
     if (btn) { btn.classList.remove('expanded'); btn.querySelector('.haifa-expand-label').textContent = 'Show All Photos'; }
   }
 
   function toggleHaifaGrid() {
     haifaGridExpanded = !haifaGridExpanded;
-    document.querySelectorAll('#haifa-main-grid .haifa-photo').forEach(function(p, i) {
-      if (i >= 3) p.style.display = haifaGridExpanded ? '' : 'none';
-    });
+    var extra = document.getElementById('haifa-extra-photos');
+    if (extra) extra.style.display = haifaGridExpanded ? 'contents' : 'none';
     var btn = document.getElementById('haifa-expand-btn');
     btn.classList.toggle('expanded', haifaGridExpanded);
     btn.querySelector('.haifa-expand-label').textContent = haifaGridExpanded ? 'Show Less' : 'Show All Photos';
