@@ -1117,12 +1117,20 @@
   <section class="haifa-photos">
     <p class="section-label reveal" data-en="Transformation" data-ar="التحوّل">Transformation</p>
     <h2 class="haifa-section-title reveal reveal-d1"><span data-en="Before &amp; After" data-ar="قبل وبعد">Before &amp; After</span> <em data-en="the Gallery" data-ar="الغاليري">the Gallery</em></h2>
-    <div class="haifa-grid reveal reveal-d2">
-      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/01_Before.jpg" alt="Before — 1"></div>
-      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/02_Before.jpg" alt="Before — 2"></div>
-      <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/03_Before.jpg" alt="Before — 3"></div>
+    <div class="haifa-grid reveal reveal-d2" id="before-after-grid">
+      <div id="before-after-extra" style="display:none">
+        <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/01_Before.jpg" alt="Before — 1"></div>
+        <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/02_Before.jpg" alt="Before — 2"></div>
+        <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/03_Before.jpg" alt="Before — 3"></div>
+      </div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/Before/04_Before.jpg" alt="Before — 4"></div>
       <div class="haifa-photo" onclick="openHaifaPhoto(this)" style="cursor:pointer"><img src="assets/images/Haifa gallery/Before and after Haifa gallery/After/20201226_164459.jpg" alt="After — 1"></div>
+    </div>
+    <div class="haifa-expand-wrap">
+      <button class="haifa-expand-btn" id="before-after-expand-btn" onclick="toggleBeforeAfter()">
+        <span class="haifa-expand-label">Show More</span>
+        <span class="haifa-expand-arrow"></span>
+      </button>
     </div>
   </section>
 
@@ -1531,7 +1539,7 @@
     if (!skipHash) { window.location.hash = id; }
     // trigger reveals for newly shown page
     setTimeout(triggerReveals, 80);
-    if (id === 'haifa') { initHaifaGrid(); initExList(); }
+    if (id === 'haifa') { initHaifaGrid(); initExList(); initBeforeAfter(); }
     return false;
   }
 
@@ -1672,8 +1680,27 @@
     if (!exListExpanded) { btn.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   }
 
+  var beforeAfterExpanded = false;
+  function initBeforeAfter() {
+    beforeAfterExpanded = false;
+    var extra = document.getElementById('before-after-extra');
+    if (extra) extra.style.display = 'none';
+    var btn = document.getElementById('before-after-expand-btn');
+    if (btn) { btn.classList.remove('expanded'); btn.querySelector('.haifa-expand-label').textContent = 'Show More'; }
+  }
+  function toggleBeforeAfter() {
+    beforeAfterExpanded = !beforeAfterExpanded;
+    var extra = document.getElementById('before-after-extra');
+    if (extra) extra.style.display = beforeAfterExpanded ? 'contents' : 'none';
+    var btn = document.getElementById('before-after-expand-btn');
+    btn.classList.toggle('expanded', beforeAfterExpanded);
+    btn.querySelector('.haifa-expand-label').textContent = beforeAfterExpanded ? 'Show Less' : 'Show More';
+    if (!beforeAfterExpanded) { document.getElementById('before-after-grid').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  }
+
   initHaifaGrid();
   initExList();
+  initBeforeAfter();
 </script>
 
 <script>
