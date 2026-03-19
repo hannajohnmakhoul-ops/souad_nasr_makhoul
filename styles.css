@@ -126,7 +126,12 @@ nav {
   background-size: cover;
   background-position: center 20%;
   background-repeat: no-repeat;
-  transform: scale(1.0);
+  transform-origin: center center;
+  animation: heroZoom 18s ease-out forwards;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.15); }
+  to   { transform: scale(1.0); }
 }
 .hero-bg::after {
   content: '';
