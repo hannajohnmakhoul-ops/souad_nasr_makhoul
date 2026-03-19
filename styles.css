@@ -119,7 +119,7 @@ nav {
 /* HERO — photo background, text stays white for readability */
 #hero {
   height: 100vh; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; background: #1a2610;
 }
 .hero-bg {
   position: absolute; inset: -20px;
