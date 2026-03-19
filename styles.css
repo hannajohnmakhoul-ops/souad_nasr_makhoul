@@ -178,12 +178,15 @@ nav {
   text-decoration: none; position: relative; overflow: hidden; transition: color 0.4s;
   cursor: pointer; border: none; background: none;
 }
-.hero-btn-primary { border: 1px solid #e8d898; color: #1a2610; background: #e8d898; border-radius: 50px; }
-.hero-btn-primary::before { content: ''; position: absolute; inset: 0; background: #ffffff; transform: translateX(-101%); transition: transform 0.4s; z-index: -1; border-radius: 50px; }
+.hero-btn-primary { border: 1px solid #e8d898; color: #1a2610; background: #e8d898; }
+.hero-btn-primary::before { content: ''; position: absolute; inset: 0; background: #ffffff; transform: translateX(-101%); transition: transform 0.4s; z-index: -1; }
 .hero-btn-primary:hover { color: #1a2610; }
 .hero-btn-primary:hover::before { transform: translateX(0); }
-.hero-btn-secondary { border: 1px solid rgba(255,255,255,0.65); color: rgba(255,255,255,0.92); background: transparent; border-radius: 50px; }
+.hero-btn-secondary { border: 1px solid rgba(255,255,255,0.65); color: rgba(255,255,255,0.92); background: transparent; }
 .hero-btn-secondary:hover { color: #ffffff; border-color: #ffffff; background: rgba(255,255,255,0.12); }
+
+/* hero text panel */
+.hero-text-panel { display: inline-block; background: rgba(10,18,6,0.45); padding: 2.5rem 3.5rem 2rem; margin-bottom: 0.5rem; backdrop-filter: blur(2px); }
 
 .scroll-indicator {
   position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
