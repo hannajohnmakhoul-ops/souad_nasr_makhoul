@@ -21,6 +21,7 @@
     <li><a href="javascript:void(0)" id="nav-gallery" onclick="showPage('gallery');event.preventDefault(); closeMobileMenu()" data-en="Gallery" data-ar="المعرض">Gallery</a></li>
     <li><a href="javascript:void(0)" id="nav-haifa"   onclick="showPage('haifa');event.preventDefault(); closeMobileMenu()" data-en="Haifa Gallery" data-ar="غاليري حيفا">Haifa Gallery</a></li>
     <li><a href="javascript:void(0)" id="nav-shop"    onclick="showPage('shop');event.preventDefault(); closeMobileMenu()" data-en="Shop" data-ar="المتجر">Shop</a></li>
+    <li><a href="javascript:void(0)" id="nav-contact" onclick="showPage('contact');event.preventDefault(); closeMobileMenu()" data-en="Contact" data-ar="تواصل">Contact</a></li>
   </ul>
   <div class="lang-toggle">
     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
@@ -1828,6 +1829,71 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // ── end shop
 </script>
+
+<!-- ════════════════════════════════════════
+     CONTACT PAGE
+════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+
+  <div class="gallery-hero">
+    <div class="gallery-hero-line"></div>
+    <div class="gallery-hero-content">
+      <div class="gallery-hero-label" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</div>
+      <h1 class="gallery-hero-title"><span data-en="Contact" data-ar="تواصل">Contact</span><br><em data-en="the Studio" data-ar="مع الاستوديو">the Studio</em></h1>
+    </div>
+  </div>
+
+  <section class="contact-body">
+    <div class="contact-grid reveal">
+
+      <div class="contact-info-col">
+        <p class="section-label" data-en="Reach Out" data-ar="تواصل">Reach Out</p>
+        <h2 class="contact-title" data-en="Let's Connect" data-ar="لنتواصل">Let's Connect</h2>
+        <p class="contact-intro" data-en="For inquiries about artworks, exhibitions, commissions, or visits to Haifa Gallery, please get in touch." data-ar="لأي استفسار حول الأعمال الفنية أو المعارض أو الطلبات الخاصة أو زيارة غاليري حيفا، يسعدنا التواصل معك.">For inquiries about artworks, exhibitions, commissions, or visits to Haifa Gallery, please get in touch.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-label" data-en="Email" data-ar="البريد الإلكتروني">Email</div>
+          <a class="contact-detail-value" href="mailto:souadnasr@gmail.com">souadnasr@gmail.com</a>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-label" data-en="Gallery Location" data-ar="موقع الغاليري">Gallery Location</div>
+          <div class="contact-detail-value" data-en="Wadi Al-Nisnas, Haifa, Israel" data-ar="وادي النسناس، حيفا">Wadi Al-Nisnas, Haifa</div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-label" data-en="Studio" data-ar="الاستوديو">Studio</div>
+          <div class="contact-detail-value" data-en="Haifa, Israel" data-ar="حيفا">Haifa</div>
+        </div>
+      </div>
+
+      <div class="contact-form-col">
+        <form class="contact-form" onsubmit="handleContactForm(event)">
+          <div class="contact-field">
+            <label class="contact-label" data-en="Your Name" data-ar="اسمك">Your Name</label>
+            <input class="contact-input" type="text" name="name" required placeholder="Name">
+          </div>
+          <div class="contact-field">
+            <label class="contact-label" data-en="Your Email" data-ar="بريدك الإلكتروني">Your Email</label>
+            <input class="contact-input" type="email" name="email" required placeholder="email@example.com">
+          </div>
+          <div class="contact-field">
+            <label class="contact-label" data-en="Subject" data-ar="الموضوع">Subject</label>
+            <input class="contact-input" type="text" name="subject" placeholder="Artwork inquiry, visit, commission...">
+          </div>
+          <div class="contact-field">
+            <label class="contact-label" data-en="Message" data-ar="رسالتك">Message</label>
+            <textarea class="contact-input contact-textarea" name="message" rows="5" required placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="btn-gold contact-submit" data-en="Send Message" data-ar="إرسال">Send Message</button>
+          <div class="contact-sent" id="contactSent" style="display:none;" data-en="Thank you — your message has been sent." data-ar="شكرًا — تم إرسال رسالتك.">Thank you — your message has been sent.</div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /contact -->
 
 <!-- ── SHOP ITEM MODAL ── -->
 <div class="shop-modal" id="shopModal" onclick="closeShopModalOutside(event)">

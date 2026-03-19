@@ -334,3 +334,16 @@ function filterGallery(cat, btn) {
     }
   });
 }
+
+function handleContactForm(e) {
+  e.preventDefault();
+  var form = e.target;
+  var name = form.name.value;
+  var email = form.email.value;
+  var subject = form.subject.value || 'Enquiry';
+  var message = form.message.value;
+  var mailto = 'mailto:souadnasr@gmail.com?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent('From: ' + name + ' <' + email + '>\n\n' + message);
+  window.location.href = mailto;
+  document.getElementById('contactSent').style.display = 'block';
+}
