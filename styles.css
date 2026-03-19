@@ -729,7 +729,7 @@ a.contact-detail-value:hover { color: var(--gold); }
 /* ══════════════════════════════════════════
    SHOP PAGE
 ══════════════════════════════════════════ */
-.shop-intro { padding: 5rem 4rem 3rem; max-width: 800px; }
+.shop-intro { padding: 5rem 4rem 3rem; max-width: 1400px; width: 100%; }
 .shop-intro-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--cream); line-height: 1.2; margin: 1rem 0 1.5rem; }
 .shop-intro-title em { font-style: italic; color: var(--gold); }
 .shop-intro-text { font-size: 1.05rem; line-height: 1.9; color: rgba(14,28,8,0.92); }
